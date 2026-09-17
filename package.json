@@ -1,0 +1,66 @@
+{
+  "name": "commitpulse",
+  "displayName": "CommitPulse",
+  "description": "Keep your dev momentum alive — live commit streak in the status bar, today's commits at a glance, activity panel for any repo.",
+  "version": "0.1.0",
+  "publisher": "v01dst",
+  "license": "MIT",
+  "icon": "media/icon.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "SCM Providers"
+  ],
+  "keywords": [
+    "git",
+    "streak",
+    "commits",
+    "productivity",
+    "habit",
+    "activity"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "commitpulse.refresh",
+        "title": "CommitPulse: Refresh"
+      },
+      {
+        "command": "commitpulse.viewActivity",
+        "title": "CommitPulse: View Activity"
+      }
+    ],
+    "configuration": {
+      "title": "CommitPulse",
+      "properties": {
+        "commitpulse.emojiMode": {
+          "type": "string",
+          "default": "emoji",
+          "enum": ["emoji", "text"],
+          "description": "Show streak as 🔥 emoji or plain text"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "22.x",
+    "typescript": "^5.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/v01dst/commitpulse"
+  },
+  "bugs": {
+    "url": "https://github.com/v01dst/commitpulse/issues"
+  }
+}
